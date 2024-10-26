@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Information</title>
+    <style>
+        body {
+            background-image: url('bg2.jpg');
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .planet-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 75%;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            max-width: 900px;
+            overflow-y: auto;
+        }
+
+        .planet-image {
+            max-width: 250px;
+            max-height: 250px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            
+        }
+
+        h1 {
+            color: #ffd700;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: #ffdf00;
+            font-size: 1.8em;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="planet-container">
+        <img id="planet-image" class="planet-image" src="" alt="Planet Image">
+        <h1 id="planet-name">Planet Name</h1>
+        
+        <h2>Overview</h2>
+        <p id="planet-description">Description will be displayed here.</p>
+
+        <h2>Physical Characteristics</h2>
+        <p id="physical-characteristics">Physical characteristics information will be displayed here.</p>
+
+        <h2>Atmosphere</h2>
+        <p id="atmosphere">Atmosphere details will be displayed here.</p>
+
+        <h2>Moons</h2>
+        <p id="moons">Moons information will be displayed here.</p>
+
+        <h2>Interesting Facts</h2>
+        <p id="interesting-facts">Interesting facts will be displayed here.</p>
+
+        <button class="back-button" onclick="window.location.href='neighPlanets.html'">Back to Solar System</button>
+    </div>
+
+    <script>
+        const planetData = {
+    Sun: {
+        description: "The Sun is the central star of our solar system and the primary source of energy for life on Earth. It is composed mainly of hydrogen (about 74%) and helium (about 24%), undergoing nuclear fusion that converts hydrogen into helium, releasing an immense amount of energy in the process. This energy travels through space and reaches Earth in about 8 minutes, providing the warmth and light necessary for life. The Sun's gravitational force is so strong that it keeps all planets, moons, asteroids, and comets in orbit around it, forming a complex and dynamic solar system.",
+        physicalCharacteristics: "The Sun has an impressive diameter of approximately 1.39 million kilometers, making it about 109 times larger than Earth. Its core temperature reaches an astonishing 15 million degrees Celsius, while the surface temperature hovers around 5,500 degrees Celsius. Despite its massive size, the Sun is a relatively average star in terms of brightness and mass when compared to other stars in our galaxy. The solar wind, a stream of charged particles emitted from the Sun, creates a protective magnetic field around the solar system, which helps shield the planets from harmful cosmic radiation.",
+        atmosphere: "The Sun's atmosphere is composed of several layers, including the photosphere, chromosphere, and corona. The photosphere is the visible surface, where light is emitted, while the chromosphere is a thin layer above it that is only visible during a solar eclipse. The corona, the outermost layer, extends millions of kilometers into space and is much hotter than the layers below, reaching temperatures of over a million degrees Celsius. The solar atmosphere plays a critical role in solar phenomena like solar flares and coronal mass ejections, which can impact space weather and satellite operations on Earth.",
+        moons: "The Sun itself does not have any moons. However, it exerts a significant gravitational influence on all celestial bodies within the solar system, including planets, dwarf planets, asteroids, and comets. The solar system is structured around the Sun's gravitational pull, with all planets, including their moons, following elliptical orbits as they travel through space. This gravitational force is fundamental in maintaining the balance and stability of the solar system as a whole.",
+        interestingFacts: "One interesting fact about the Sun is that it is responsible for the solar cycle, an approximately 11-year cycle of solar activity that influences solar phenomena like sunspots and solar flares. Additionally, the Sun makes up about 99.86% of the total mass of the solar system, showcasing its dominant presence. Despite being an average star, the Sun is unique in that it supports life on Earth, making it an essential focal point for both scientific study and cultural significance throughout human history.",
+        image: "images/sun.svg"
+    },
+    Mercury: {
+        description: "Mercury is the closest planet to the Sun and is characterized by its small size and lack of a substantial atmosphere. Its surface is covered with craters, similar to Earth's Moon, which testify to its violent history and the impacts it has endured over billions of years. Despite being closest to the Sun, Mercury experiences extreme temperature fluctuations; it can reach scorching highs during the day and frigid lows at night. The planet's weak gravitational field means that it cannot hold onto a significant atmosphere, resulting in a barren and desolate landscape. Its extreme conditions and rocky terrain provide a glimpse into the early solar system's history.",
+        physicalCharacteristics: "With a diameter of approximately 4,880 kilometers, Mercury is the smallest planet in the solar system. Its surface temperature can vary dramatically, reaching as high as 427 degrees Celsius during the day and dropping to as low as -173 degrees Celsius at night. Mercury's core is believed to be composed primarily of iron, which accounts for about 85% of the planet's radius, giving it a high density. The planet has a thin crust, and its surface is marked by numerous impact craters, indicating that it has been geologically inactive for millions of years.",
+        atmosphere: "Mercury has a very thin atmosphere, often referred to as an exosphere, primarily composed of oxygen, sodium, hydrogen, helium, and potassium. The exosphere is so tenuous that it cannot support weather systems or even provide a breathable atmosphere for any potential life forms. This thin atmosphere fails to retain heat, contributing to the extreme temperature changes experienced on the planet. Additionally, solar winds continuously strip away this weak atmosphere, making it difficult for Mercury to sustain any significant atmospheric conditions over time.",
+        moons: "Mercury has no moons. Its proximity to the Sun and weak gravitational field make it unable to capture or hold onto any natural satellites. This lack of moons sets it apart from many other planets in the solar system, which often have multiple moons orbiting them. The absence of a moon allows Mercury to have a clearer view of the Sun and the vastness of space surrounding it, providing a unique perspective on the solar system.",
+        interestingFacts: "One fascinating aspect of Mercury is that a day on the planet (the time it takes to rotate once on its axis) is longer than a year (the time it takes to orbit the Sun). Specifically, it takes about 59 Earth days for Mercury to complete one rotation, but only about 88 Earth days to complete one orbit around the Sun. This unique rotational pattern creates interesting challenges for any potential missions to the planet, as its extreme temperatures and lengthy days impact exploration strategies.",
+        image: "images/mercury.svg"
+    },
+    Venus: {
+        description: "Venus, often referred to as Earth's twin due to its similar size and composition, presents a harsh and inhospitable environment. Covered in thick clouds of sulfuric acid, the planet experiences a runaway greenhouse effect that traps heat, making it the hottest planet in the solar system with surface temperatures averaging around 471 degrees Celsius. Venus's surface is characterized by vast volcanic plains, mountainous regions, and large lava flows, indicating a geologically active past. The extreme atmospheric pressure on the surface, about 92 times that of Earth, creates a challenging environment that would be uninhabitable for humans and most known life forms.",
+        physicalCharacteristics: "With a diameter of about 12,104 kilometers, Venus is similar in size to Earth, but its surface conditions are vastly different. The planet's thick atmosphere creates an intense greenhouse effect, leading to high surface temperatures that can melt lead. Venus has no moons or rings, setting it apart from many other planets. The landscape includes large volcanic structures, such as Maxwell Montes, which is higher than Mount Everest, showcasing the planet's geological history. Despite its proximity to Earth, the conditions on Venus make it one of the most extreme environments in the solar system.",
+        atmosphere: "Venus's atmosphere is composed primarily of carbon dioxide (about 96.5%), with clouds of sulfuric acid contributing to its dense, toxic environment. The atmosphere creates a strong greenhouse effect that results in surface temperatures hot enough to melt metals. The pressure at the surface is equivalent to being about 1,000 meters underwater on Earth, making it difficult for spacecraft to operate. The thick cloud cover reflects sunlight, giving Venus its bright appearance, but the clouds also trap heat, contributing to the planet's extreme temperatures and hostile conditions.",
+        moons: "Venus has no moons, which is unusual for a planet of its size. Its lack of natural satellites is likely due to its proximity to the Sun and its retrograde rotation. In contrast to many other planets that have multiple moons, Venus stands alone, with its surface and atmosphere dominating its unique characteristics.",
+        interestingFacts: "An interesting feature of Venus is its retrograde rotation; it rotates in the opposite direction to most planets in the solar system. This means that on Venus, the Sun rises in the west and sets in the east. Additionally, a day on Venus (the time it takes to rotate once on its axis) is longer than a year (the time it takes to orbit the Sun), taking about 243 Earth days to complete one rotation. This combination of factors contributes to the extreme and unique nature of this enigmatic planet.",
+        image: "images/venus.svg"
+    },
+    Earth: {
+        description: "Earth is the third planet from the Sun and the only known planet to support life. Its diverse environments range from lush forests and vast oceans to arid deserts and icy tundras, creating a unique tapestry of ecosystems. Approximately 70% of Earth's surface is covered by water, with the remaining land hosting a rich variety of habitats that support millions of species. Earth’s atmosphere, composed of nitrogen, oxygen, and trace gases, plays a vital role in regulating temperature and shielding life from harmful solar radiation.",
+        physicalCharacteristics: "Earth has a diameter of about 12,742 kilometers, making it the fifth-largest planet in the solar system. It has a relatively stable climate, thanks to its protective atmosphere and magnetic field, which shield it from solar and cosmic radiation. The planet's rotation creates a day-night cycle, while its axial tilt results in seasonal variations. Earth's geological activity, including plate tectonics, shapes its surface and contributes to the formation of mountains, valleys, and ocean basins, making it a dynamic and ever-changing planet.",
+        atmosphere: "The atmosphere of Earth is primarily composed of nitrogen (78%) and oxygen (21%), with trace amounts of other gases such as argon, carbon dioxide, and water vapor. This unique composition not only supports life but also contributes to weather patterns and climate regulation. Earth's atmosphere is divided into layers, including the troposphere, where weather occurs, and the stratosphere, which contains the ozone layer that protects life from harmful ultraviolet radiation. This protective layer plays a crucial role in maintaining the delicate balance necessary for life on Earth.",
+        moons: "Earth has one natural moon, commonly referred to as 'the Moon.' This moon significantly influences Earth's tides, stabilizes its axial tilt, and contributes to a relatively stable climate. The Moon is the fifth-largest natural satellite in the solar system and has a substantial impact on Earth's geological and biological processes. Its surface is marked by craters and maria, providing insights into the history of the Earth-Moon system and the early solar system.",
+        interestingFacts: "One of the most fascinating aspects of Earth is its ability to support diverse forms of life. From microscopic organisms to massive whales, Earth hosts an incredible variety of species adapted to various environments. Additionally, Earth’s atmosphere plays a crucial role in maintaining the temperature necessary for life, creating a delicate balance that allows ecosystems to thrive. The planet's dynamic nature, marked by geological activity and climate variability, continues to shape the future of life on Earth.",
+        image: "images/earth.svg"
+    },
+    Mars: {
+        description: "Mars, known as the Red Planet due to its reddish appearance from iron oxide (rust) on its surface, has captivated human imagination for centuries. Its landscape features vast deserts, towering volcanoes, and deep canyons, with evidence suggesting that it once had liquid water on its surface. Mars is home to the largest volcano in the solar system, Olympus Mons, and an extensive canyon system called Valles Marineris. With an atmosphere mostly composed of carbon dioxide, Mars presents an inhospitable environment, but it has become a focal point for exploration, particularly in the search for signs of past life.",
+        physicalCharacteristics: "Mars has a diameter of approximately 6,779 kilometers, making it the fourth-largest planet in the solar system. Its surface temperature can range from -87 degrees Celsius to -5 degrees Celsius, depending on the location and time of day. Mars has a thin atmosphere, which contributes to its cold and dry conditions. The planet’s surface is marked by impact craters, dust storms, and evidence of ancient riverbeds and lake beds, suggesting that it may have once harbored conditions suitable for life.",
+        atmosphere: "The Martian atmosphere is very thin, composed primarily of carbon dioxide (95%), with traces of nitrogen and argon. This thin atmosphere means that Mars cannot retain heat, resulting in significant temperature fluctuations. The lack of a substantial atmosphere contributes to the harsh conditions on the surface, where dust storms can engulf the planet, reducing visibility and affecting climate. Despite these challenges, scientists are intrigued by Mars's history and the potential for past life, making it a prime target for future exploration.",
+        moons: "Mars has two small moons, Phobos and Deimos, which are irregularly shaped and believed to be captured asteroids. Phobos, the larger of the two, is gradually spiraling toward Mars and may eventually collide with the planet or break apart, while Deimos is farther away and appears to be more stable. Both moons are thought to have formed from the debris of the early solar system and offer valuable insights into Mars's history and geology.",
+        interestingFacts: "Mars has been the focus of numerous missions aimed at understanding its geology, climate, and potential for life. The planet has the highest volcano and the deepest canyon in the solar system, showcasing its unique geological features. Additionally, Mars experiences seasons similar to Earth due to its axial tilt, although they last about twice as long because its year is nearly twice as long as Earth's. This intriguing planet continues to be a prime candidate for future human exploration and the search for extraterrestrial life.",
+        image: "images/mars.svg"
+    },
+    Jupiter: {
+        description: "Jupiter is the largest planet in the solar system, a gas giant with a diameter of about 139,820 kilometers, making it over 11 times larger than Earth. Its atmosphere is composed mainly of hydrogen and helium, with trace amounts of methane, water vapor, ammonia, and other compounds, creating a vibrant tapestry of colors. Jupiter is known for its Great Red Spot, a massive storm system that has been raging for at least 350 years. The planet's immense size and strong gravitational pull have significant effects on the solar system, influencing the orbits of nearby planets and asteroids.",
+        physicalCharacteristics: "Jupiter has a mass more than 300 times that of Earth, which contributes to its strong gravitational field. It has a rapid rotation period, taking less than 10 hours to complete one rotation, which leads to its noticeable equatorial bulge. The planet does not have a solid surface like Earth; instead, it has a thick atmosphere that transitions into deeper layers of gas and liquid. The intense pressure and temperature conditions within Jupiter create fascinating phenomena, such as lightning and auroras, making it a subject of intense scientific study.",
+        atmosphere: "Jupiter's atmosphere is characterized by its dynamic weather patterns and colorful bands, caused by the planet's rapid rotation and the convection of gases. These bands, known as zones and belts, create striking visual contrasts and are a hallmark of Jupiter's appearance. The atmosphere is also home to powerful storms, including the Great Red Spot, which is larger than Earth and exhibits complex cloud structures. The planet’s atmosphere is not static; it is continually changing, with new storms forming and existing ones dissipating over time.",
+        moons: "Jupiter has 79 known moons, with four large moons called the Galilean moons: Io, Europa, Ganymede, and Callisto. Each of these moons is unique in its characteristics; for example, Io is the most volcanically active body in the solar system, while Europa is covered in ice and is believed to have a subsurface ocean that could potentially harbor life. Ganymede is the largest moon in the solar system, even larger than the planet Mercury, and Callisto is known for its heavily cratered surface. These moons provide valuable insights into the history and evolution of the Jupiter system.",
+        interestingFacts: "One intriguing fact about Jupiter is its strong magnetic field, which is about 20,000 times stronger than Earth's. This magnetic field creates spectacular auroras at the planet's poles and influences the behavior of its moons. Additionally, Jupiter is famous for its many storms, some of which can be larger than Earth. The planet's complex atmospheric dynamics and extensive moon system make it a key target for exploration, with missions like Juno providing invaluable data about its composition and behavior.",
+        image: "images/jupiter.svg"
+    },
+    Saturn: {
+        description: "Saturn is renowned for its stunning ring system, which is the most extensive and complex of any planet in the solar system. The rings are composed of countless particles, ranging in size from tiny ice grains to large boulders, made primarily of ice and rock. Saturn, the second-largest planet, has a diameter of approximately 116,460 kilometers and is primarily composed of hydrogen and helium. Despite its size, Saturn has a relatively low density; it could float in water if there were a body large enough to hold it. Its distinctive features make it a favorite among astronomers and space enthusiasts.",
+        physicalCharacteristics: "Saturn’s mass is about 95 times that of Earth, but its average density is lower than that of water, giving it a unique position among planets. The planet has a complex internal structure, consisting of a core made of rock and metal surrounded by metallic hydrogen and gaseous hydrogen. Saturn's rotation is rapid, completing a full rotation in about 10.7 hours, which contributes to its noticeable oblateness, where the equator bulges due to centrifugal force. The planet's unique characteristics continue to fascinate scientists studying planetary formation and dynamics.",
+        atmosphere: "The atmosphere of Saturn is composed mainly of hydrogen (about 96%) and helium (about 3%), with trace amounts of methane, ammonia, and other gases. This composition creates a colorful and dynamic atmosphere, with winds reaching speeds of up to 1,800 kilometers per hour in the upper atmosphere. Saturn's atmosphere exhibits banding similar to Jupiter's but is less distinct due to the presence of clouds and storms. The planet also experiences seasonal changes, with storms and atmospheric phenomena varying as it orbits the Sun over a 29.5-year cycle.",
+        moons: "Saturn has 82 known moons, with Titan being the largest and one of the most interesting. Titan is notable for having a dense atmosphere and liquid methane lakes on its surface, making it a key target for astrobiology studies. Other significant moons include Rhea, Enceladus, and Iapetus, each exhibiting unique geological features and potential subsurface oceans. Saturn’s moons contribute to its ring system and provide insights into the processes that govern planetary systems in our solar system and beyond.",
+        interestingFacts: "One fascinating fact about Saturn is its ability to produce 'moonlets' within its rings, where particles coalesce to form small moons. The gravitational interactions between Saturn's moons and rings create complex dynamics that shape the ring system. Additionally, Saturn is home to some of the most stunning natural phenomena in the solar system, including beautiful auroras and storms that rival those of Jupiter. The combination of its rings, moons, and atmospheric phenomena make Saturn a prime candidate for ongoing research and exploration.",
+        image: "images/saturn.svg"
+    },
+    Uranus: {
+        description: "Uranus is unique among the planets for its extreme axial tilt of over 90 degrees, causing it to rotate on its side. This unusual tilt results in extreme seasonal variations, where each pole experiences 42 years of continuous sunlight followed by 42 years of darkness. Uranus is classified as an ice giant, primarily composed of water, ammonia, and methane ices, which gives it a pale blue color. The planet's atmosphere is characterized by high winds and storms, making it one of the most dynamic atmospheres in the solar system despite its distance from the Sun.",
+        physicalCharacteristics: "Uranus has a diameter of about 50,724 kilometers and is the third-largest planet in the solar system. Its low density indicates a significant composition of ices and gases. The planet's core is thought to be composed of rock and metal, surrounded by a thick layer of water, ammonia, and methane ices. Uranus has a relatively low surface temperature, averaging around -214 degrees Celsius, making it the coldest planet in the solar system. Its unique physical characteristics and atmospheric phenomena continue to intrigue scientists studying planetary formation and dynamics.",
+        atmosphere: "The atmosphere of Uranus is predominantly composed of hydrogen and helium, with methane giving it a distinct blue color. The planet experiences extreme weather patterns, including strong winds and cloud formations that can shift rapidly. Unlike other gas giants, Uranus has a relatively bland appearance, with fewer visible storms, but it does experience seasonal changes due to its axial tilt. The presence of methane in its atmosphere also contributes to its unique color and atmospheric dynamics, providing insights into the processes governing ice giant planets.",
+        moons: "Uranus has 27 known moons, with the five largest being Miranda, Ariel, Umbriel, Titania, and Oberon. Each of these moons exhibits unique geological features, such as Miranda's extreme canyons and cliffs, which suggest a complex history of geological activity. The moons of Uranus are thought to have formed from the debris left over after the planet's formation, and their interactions with the planet's magnetic field and atmosphere provide valuable insights into the dynamics of moon systems around ice giant planets.",
+        interestingFacts: "One of the most interesting aspects of Uranus is its unique rotational behavior, which results in its extreme axial tilt. This tilt causes one hemisphere to experience continuous sunlight for an extended period, while the opposite hemisphere remains in darkness. Additionally, Uranus is known for having a faint ring system, consisting of 13 known rings, which are composed of dark particles. These features make Uranus a subject of scientific interest, as researchers seek to understand the processes that shape ice giant planets and their unique characteristics.",
+        image: "images/uranus.svg"
+    },
+    Neptune: {
+        description: "Neptune, the farthest planet from the Sun, is known for its striking blue color, primarily caused by the absorption of red light by methane in its atmosphere. As an ice giant, Neptune has a composition similar to Uranus, with significant amounts of water, ammonia, and methane ices. The planet's atmosphere is characterized by dynamic weather patterns, including the fastest winds in the solar system, reaching speeds of up to 2,100 kilometers per hour. Neptune's atmosphere is also home to large storms, such as the Great Dark Spot, which are reminiscent of Jupiter's storms.",
+        physicalCharacteristics: "With a diameter of about 49,244 kilometers, Neptune is the fourth-largest planet in the solar system. Despite being slightly smaller than Uranus, it is more massive, indicating a denser composition. Neptune's core is believed to be rocky, surrounded by a thick layer of ices and gases. The planet's average temperature is around -214 degrees Celsius, making it one of the coldest in the solar system. Neptune's unique characteristics and atmospheric dynamics continue to be a focus of research as scientists seek to understand the behavior of ice giants.",
+        atmosphere: "Neptune's atmosphere is composed mainly of hydrogen and helium, with methane contributing to its blue color. The planet experiences powerful storms and high-speed winds, making it one of the most dynamic atmospheres in the solar system. Neptune has been observed to have active weather patterns, including large storms and bright cloud formations. The planet's atmosphere is relatively stable compared to other gas giants, but its weather systems exhibit rapid changes, showcasing the complexity of its climatic conditions.",
+        moons: "Neptune has 14 known moons, with Triton being the largest and one of the most intriguing. Triton is unique for its retrograde orbit, suggesting it may have been captured by Neptune's gravity rather than forming in place. This moon is also geologically active, exhibiting geysers that erupt nitrogen gas. The other moons of Neptune are smaller and irregularly shaped, providing insights into the formation and evolution of moon systems around ice giant planets. Triton and Neptune's moons offer a glimpse into the complex interactions between a planet and its natural satellites.",
+        interestingFacts: "One fascinating aspect of Neptune is its dynamic weather patterns, including the fastest winds recorded in the solar system. These winds can reach speeds of up to 2,100 kilometers per hour, showcasing the planet's extreme atmospheric conditions. Additionally, Neptune's distance from the Sun means that it receives very little solar energy, yet it generates more heat than it receives, leading to its unique climatic phenomena. The combination of its striking blue color, dynamic atmosphere, and intriguing moons makes Neptune a captivating subject for exploration and study.",
+        image: "images/neptune.svg"
+    }
+};
+
+
+
+        const params = new URLSearchParams(window.location.search);
+        const planet = params.get('planet');
+
+        if (planet && planetData[planet]) {
+            document.getElementById('planet-name').textContent = planet;
+            document.getElementById('planet-description').textContent = planetData[planet].description;
+            document.getElementById('physical-characteristics').textContent = planetData[planet].physicalCharacteristics;
+            document.getElementById('atmosphere').textContent = planetData[planet].atmosphere;
+            document.getElementById('moons').textContent = planetData[planet].moons;
+            document.getElementById('interesting-facts').textContent = planetData[planet].interestingFacts;
+            document.getElementById('planet-image').src = planetData[planet].image;
+            document.getElementById('planet-image').alt = planet + " Image";
+        } else {
+            document.getElementById('planet-name').textContent = "Planet Not Found";
+            document.getElementById('planet-description').textContent = "No information available for this planet.";
+            document.getElementById('physical-characteristics').textContent = "";
+            document.getElementById('atmosphere').textContent = "";
+            document.getElementById('moons').textContent = "";
+            document.getElementById('interesting-facts').textContent = "";
+            document.getElementById('planet-image').style.display = "none";
+        }
+
+
+
+        
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="planet-info.js"></script>
+
+</body>
+</html>

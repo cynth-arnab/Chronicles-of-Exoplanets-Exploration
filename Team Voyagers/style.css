@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+main {
+    /* position: relative; Make main element a positioning container */
+    height: 100vh;
+    overflow: hidden;
+}
+#bgimage{
+
+    height:100vh;
+    width:100vw;
+}
+.main-title{
+    font-size: 100px;
+    position:absolute;
+    left:850px;
+    top:100px;
+        display: flex;
+        flex-direction: column; /* Align children vertically */
+        align-items: center; /* Center children horizontally */
+        margin: 20px 0;
+        text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.6);
+}
+.main-title .the {
+     /* Adjust size for "The" */
+    margin: 0;
+    line-height: 1;
+}
+
+.main-title .voyagers {
+     /* Adjust size for "Voyagers" */
+    margin: 0;
+    line-height: 1;
+}
+.about-title{
+    font-size: 100px;
+    position: relative;
+}
+.sub-title{
+    position: absolute;
+    font-size: 25px;
+    left:850px;
+    top:400px;
+    /* margin-right: 10px; */
+    margin: 10px 0;
+            color: #00ffcc;
+            text-shadow: 0 0 15px #00ffcc, 0 0 30px rgba(0, 255, 204, 0.8); /* Glow effect */
+            letter-spacing: 1px;
+            line-height: 1.5;
+}
+
+.more-info{
+    position: absolute;
+    font-size: 25px;
+    left:150px;
+    top:480px;
+    margin: 20px auto;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 255, 204, 0.5);
+            max-width: 600px;
+            line-height: 1.6;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(0, 255, 204, 0.8); /* Glow effect */
+       
+}
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent overlay */
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Add hover effect for navigation links */
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    position: absolute;
+    top: 50px; /* Adjust as needed */
+    left: 50px; /* Adjust as needed */
+    color: #fff; /* Ensure text color is visible */
+}
+
+img {
+    width: 100%;
+}
+
+.telescope-container {
+    position: relative;
+    bottom: 50px;
+}
+
+#mars {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 120px; /* Adjust as needed */
+    left: 30%;
+    transform: translateX(-50%);
+}
+#about-us{
+    width: 100%;
+    height:100vh;
+    background-image: url('spaceimage.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Solar System</title>
+    <style>
+        body {
+            background-image: url('solars.jpg');
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 120vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        .fun-fact-box {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid #FFD700;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            color: #FFD700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+
+        .solar-system {
+            position: relative;
+            width: 800px;
+            height: 800px;
+        }
+
+        .sun {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 90px;
+            height: 90px;
+            margin: -45px 0 0 -45px;
+            border-radius: 50%;
+            background-color: yellow;
+            box-shadow: 0 0 30px rgba(255, 255, 0, 0.5);
+            z-index: 10;
+        }
+
+        .planet {
+            position: absolute;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-weight: bold;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent overlay */
+    padding: 20px;
+    
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Add hover effect for navigation links */
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+        .mercury { background-color: #7f7f7f; width: 30px; height: 30px; animation: orbit-mercury 15s linear infinite; }
+        .venus { background-color: #ffcc00; width: 45px; height: 45px; animation: orbit-venus 17s linear infinite; }
+        .earth { background-color: #00ccff; width: 45px; height: 45px; animation: orbit-earth 18s linear infinite; }
+        .mars { background-color: #ff3300; width: 38px; height: 38px; animation: orbit-mars 20s linear infinite; }
+        .jupiter { background-color: #d4a160; width: 60px; height: 60px; animation: orbit-jupiter 22s linear infinite; }
+        .saturn { background-color: #f1c40f; width: 53px; height: 53px; animation: orbit-saturn 25s linear infinite; }
+        .uranus { background-color: #00bfff; width: 45px; height: 45px; animation: orbit-uranus 28s linear infinite; }
+        .neptune { background-color: #0000ff; width: 45px; height: 45px; animation: orbit-neptune 30s linear infinite; }
+        .pluto { background-color: #c0c0c0; width: 23px; height: 23px; animation: orbit-pluto 34s linear infinite; }
+
+        @keyframes orbit-mercury { 0% { transform: rotate(0deg) translateX(210px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(210px) rotate(0deg); } }
+        @keyframes orbit-venus { 0% { transform: rotate(0deg) translateX(270px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(270px) rotate(0deg); } }
+        @keyframes orbit-earth { 0% { transform: rotate(0deg) translateX(310px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(310px) rotate(0deg); } }
+        @keyframes orbit-mars { 0% { transform: rotate(0deg) translateX(360px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(360px) rotate(0deg); } }
+        @keyframes orbit-jupiter { 0% { transform: rotate(0deg) translateX(420px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(420px) rotate(0deg); } }
+        @keyframes orbit-saturn { 0% { transform: rotate(0deg) translateX(470px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(470px) rotate(0deg); } }
+        @keyframes orbit-uranus { 0% { transform: rotate(0deg) translateX(520px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(520px) rotate(0deg); } }
+        @keyframes orbit-neptune { 0% { transform: rotate(0deg) translateX(560px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(560px) rotate(0deg); } }
+        @keyframes orbit-pluto { 0% { transform: rotate(0deg) translateX(600px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(600px) rotate(0deg); } }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="voyage.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="exoplanet.html">Exoplanets Search</a></li>
+                <li><a href="neighPlanets.html">Neighbourhood Planets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 style="margin-top: 80px; margin-bottom: 50px;">Interactive Solar System</h1>
+
+    <div class="fun-fact-box" id="funFact"></div>
+    <div class="fun-fact-box" id="desc">Try to catch every planet and star!😁🌍</div>
+
+    <div class="solar-system">
+        <div class="sun" onclick="window.location.href='planet-info.html?planet=Sun'"></div>
+        <div class="planet mercury" onclick="window.location.href='planet-info.html?planet=Mercury'"></div>
+        <div class="planet venus" onclick="window.location.href='planet-info.html?planet=Venus'"></div>
+        <div class="planet earth" onclick="window.location.href='planet-info.html?planet=Earth'"></div>
+        <div class="planet mars" onclick="window.location.href='planet-info.html?planet=Mars'"></div>
+        <div class="planet jupiter" onclick="window.location.href='planet-info.html?planet=Jupiter'"></div>
+        <div class="planet saturn" onclick="window.location.href='planet-info.html?planet=Saturn'"></div>
+        <div class="planet uranus" onclick="window.location.href='planet-info.html?planet=Uranus'"></div>
+        <div class="planet neptune" onclick="window.location.href='planet-info.html?planet=Neptune'"></div>
+        <div class="planet pluto" onclick="window.location.href='planet-info.html?planet=Pluto'"></div>
+    </div>
+
+    <script>
+        // Array of fun facts
+        const funFacts = [
+            "The Sun accounts for 99.86% of the mass in the Solar System!",
+            "A day on Venus is longer than a year on Venus.",
+            "Jupiter has more than twice the mass of all other planets combined.",
+            "Neptune has the strongest winds in the Solar System.",
+            "Saturn would float if placed in a giant pool of water.",
+            "Mercury has no atmosphere to retain heat, so its surface varies in temperature wildly.",
+            "Pluto, now classified as a dwarf planet, has five moons.",
+            "The Great Red Spot on Jupiter is a storm larger than Earth!"
+        ];
+
+        // Select a random fact and display it
+        document.getElementById("funFact").innerHTML = funFacts[Math.floor(Math.random() * funFacts.length)];
+    </script>
+
+</body>
+</html>

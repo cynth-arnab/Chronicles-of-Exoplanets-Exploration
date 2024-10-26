@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exoplanet Search</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="exoplanet.css">
+  <style>
+    header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent overlay */
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Add hover effect for navigation links */
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="exoplanet.html">Exoplanets Search</a></li>
+            <li><a href="neighPlanets.html">Neighbourhood Planets</a></li>
+        </ul>
+    </nav>
+</header>
+  <h1 class="main-title">Exoplanet Search</h1>
+
+  <div class="search-box">
+    <input type="text" id="search" class="input-search" placeholder="Type to Search...">
+    <button class="btn-search"><i class="fas fa-search"></i></button>
+    <ul id="search-results" class="search-results"></ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="searchbar.js"></script>
+</body>
+</html>
